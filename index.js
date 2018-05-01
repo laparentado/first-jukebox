@@ -52,7 +52,7 @@ class Jukebox{
     myAudio.play()
     song.innerHTML = this.catalog[currentSong].title +"-"+ this.catalog[currentSong].artist
   }else{
-    myAudio.src = currentSong.file++
+    myAudio.src = this.catalog[currentSong].file++
     myAudio.src = this.catalog[currentSong].file
     myAudio.play()
     song.innerHTML = this.catalog[currentSong].title +"-"+ this.catalog[currentSong].artist
