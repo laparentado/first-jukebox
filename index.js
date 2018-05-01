@@ -4,28 +4,50 @@ var stop = document.getElementById("stop")
 var ff = document.getElementById("ff")
 var song = document.getElementById("song")
 
-var catalog = ["be my baby - the ronettes", "can't hurry love - the supremes", "why do fools fall in love - frankie lymon"]
+var audio = document.createElement("audio")
+document.body.appendChild(audio)
 
-var mySongs = new Audio([""]);
+var catalog = [];
+var currentSong = 0;
+// function Audio(title, artist, file){
+//   this.title = title;
+//   this.artist = artist;
+//   this.file = file;
+// }
+var song1 = new Audio(//"burn", "bacchae",
+"burn.mp3")
+catalog.push(song1)
+var song2 = new Audio(//"dig", "bacchae",
+"dig.mp3")
+catalog.push(song2)
+var song3 = new Audio(//"pressure", "bacchae",
+"pressure.mp3")
+catalog.push(song3)
+
 
 class Jukebox{
 
   playing(){
-    for(let i=0; i<mySongs.length;i++){
-      song.innerHTML = mySongs[i].play()
-    }
+      catalog[currentSong].play()
+      song.innerHTML = currentSong.title +"-"+ currentSong.artist
   }
   pausing(){
-    song.innerHTML = "song paused"
+    catalog[currentSong].pause()
   }
   stopping(){
-    song.innerHTML = "song stopped"
+    catalog[currentSong].pause()
+    catalog[currentSong].currentTime =0;
   }
   forwarding(){
-    for(let i=0;i<mySongs.length; i++){
-    song.innerHTML = mySongs[i-1]
+    catalog[currentSong].pause()
+    if(currentSong == catalog.length-1){
+      currentSong =0;
+    catalog[currentSong].play()
+  }else{
+    currentSong++
+    catalog[currentSong].play()
   }
-}
+  }
 }
 
 var myJuke = new Jukebox()

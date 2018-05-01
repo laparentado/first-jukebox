@@ -4,3 +4,24 @@
   height: 100px;
   font-family: monospace;
 }
+#play{
+  margin-left: 50px;
+  margin-top: 10px;
+}
+#pause{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+#stop{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+#ff{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+#song{
+  border:1px solid red;
+  padding: 10px;
+  margin-top: 20px
+}
