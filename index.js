@@ -8,7 +8,6 @@ var audio = document.createElement("audio")
 document.body.appendChild(audio)
 
 
-
 function Song(title, artist, file){
   this.title = title;
   this.artist = artist;
@@ -46,18 +45,33 @@ class Jukebox{
   forwarding(){
     myAudio.src = this.catalog[currentSong].file
     myAudio.pause()
-    if(myAudio.src = this.catalog[currentSong].file == this.catalog.length-1){
-      myAudio.src = currentSong.file =0;
-    myAudio.src = this.catalog[currentSong].file
-    myAudio.play()
-    song.innerHTML = this.catalog[currentSong].title +"-"+ this.catalog[currentSong].artist
-  }else{
+    // this.catalog[currentSong].file = 0
+    // this.catalog[currentSong].file++
     myAudio.src = this.catalog[currentSong].file++
-    myAudio.src = this.catalog[currentSong].file
     myAudio.play()
-    song.innerHTML = this.catalog[currentSong].title +"-"+ this.catalog[currentSong].artist
+  //   if(myAudio.src = this.catalog[currentSong].file == this.catalog.length-1){
+  //     myAudio.src = this.catalog[currentSong].file =0;
+  //   myAudio.src = this.catalog[currentSong].file
+  //   myAudio.play()
+  //   song.innerHTML = this.catalog[currentSong].title +"-"+ this.catalog[currentSong].artist
+  // }else{
+  //   myAudio.src = this.catalog[currentSong].file++
+  //   // myAudio.src = this.catalog[currentSong].file
+  //   myAudio.play()
+  //   song.innerHTML = this.catalog[currentSong].title +"-"+ this.catalog[currentSong].artist
+  // }
   }
-  }
+
+  // forwarding(){
+  //   this.catalog[currentSong].pause()
+  //   if(currentSong == this.catalog.length-1){
+  //     currentSong =0;
+  //   this.catalog[currentSong].play()
+  // }else{
+  //   currentSong++
+  //   this.catalog[currentSong].play()
+  // }
+  // }
 }
 
 var myJuke = new Jukebox()
