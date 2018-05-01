@@ -41,7 +41,7 @@ class Jukebox{
   stopping(){
     myAudio.src = this.catalog[currentSong].file
     myAudio.pause()
-    myAudio.src = this.catalog[currentSong].file.currentTime =0;
+    myAudio.currentTime =0;
   }
   forwarding(){
     myAudio.src = this.catalog[currentSong].file
