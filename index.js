@@ -15,13 +15,13 @@ var song3 = new Audio("burn.mp3")
 var song4 = new Audio("pressure.mp3")
 var song5 = new Audio("read.mp3")
 
-// function Song(title, artist, url){
-//   this.title = title;
-//   this.artist = artist;
-//   this.url = url;
-// }
+function Song(title, artist, url){
+  this.title = title;
+  this.artist = artist;
+  this.url = url;
+}
 
-// song1 = new Song()
+song1 = new Song()
 
 
 class Jukebox{
