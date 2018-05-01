@@ -2,10 +2,11 @@
   border: 1px solid;
   width: 350px;
   height: 100px;
+  background-color: whitesmoke;
   font-family: monospace;
 }
 #play{
-  margin-left: 50px;
+  margin-left: 60px;
   margin-top: 10px;
 }
 #pause{
@@ -21,7 +22,8 @@
   margin-top: 10px;
 }
 #song{
-  border:1px solid red;
+  border:1px solid turquoise;
   padding: 10px;
-  margin-top: 20px
+  margin-top: 20px;
+  background-color: white;
 }

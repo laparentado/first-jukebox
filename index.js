@@ -7,45 +7,46 @@ var song = document.getElementById("song")
 var audio = document.createElement("audio")
 document.body.appendChild(audio)
 
-var catalog = [];
 var currentSong = 0;
-// function Audio(title, artist, file){
+
+var song1 = new Audio("dig.mp3")
+var song2 = new Audio("prick.mp3")
+var song3 = new Audio("burn.mp3")
+var song4 = new Audio("pressure.mp3")
+var song5 = new Audio("read.mp3")
+
+// function Song(title, artist, url){
 //   this.title = title;
 //   this.artist = artist;
-//   this.file = file;
+//   this.url = url;
 // }
-var song1 = new Audio(//"burn", "bacchae",
-"burn.mp3")
-catalog.push(song1)
-var song2 = new Audio(//"dig", "bacchae",
-"dig.mp3")
-catalog.push(song2)
-var song3 = new Audio(//"pressure", "bacchae",
-"pressure.mp3")
-catalog.push(song3)
+
+// song1 = new Song()
 
 
 class Jukebox{
-
+  constructor(){
+    this.catalog = [song1, song2, song3, song4, song5]
+  }
   playing(){
-      catalog[currentSong].play()
-      song.innerHTML = currentSong.title +"-"+ currentSong.artist
+      this.catalog[currentSong].play()
+      song.innerHTML = currentSong
   }
   pausing(){
-    catalog[currentSong].pause()
+    this.catalog[currentSong].pause()
   }
   stopping(){
-    catalog[currentSong].pause()
-    catalog[currentSong].currentTime =0;
+    this.catalog[currentSong].pause()
+    this.catalog[currentSong].currentTime =0;
   }
   forwarding(){
-    catalog[currentSong].pause()
-    if(currentSong == catalog.length-1){
+    this.catalog[currentSong].pause()
+    if(currentSong == this.catalog.length-1){
       currentSong =0;
-    catalog[currentSong].play()
+    this.catalog[currentSong].play()
   }else{
     currentSong++
-    catalog[currentSong].play()
+    this.catalog[currentSong].play()
   }
   }
 }
